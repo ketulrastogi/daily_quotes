@@ -45,11 +45,7 @@ class LoginViewModel extends BaseViewModel {
   }
 
   Future<void> verifyCode(String smsCode, String verificationId) async {
-    try {
-      await _authService.signInWithOTP(smsCode, verificationId);
-    } on PlatformException catch (e) {
-      showErroSnackBar('OTP Verification failed. ${e.toString()}');
-    }
+    return await _authService.signInWithOTP(smsCode, verificationId);
   }
 
   showErroSnackBar(String message) {

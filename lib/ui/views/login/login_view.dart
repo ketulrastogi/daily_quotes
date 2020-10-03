@@ -108,7 +108,7 @@ class LoginView extends StatelessWidget {
                                     await model.verifyCode(
                                         model.smsCode, model.verificationId);
                                     _codeController.clear();
-                                  } on PlatformException catch (e) {
+                                  } catch (e) {
                                     model.showErroSnackBar(
                                         'OTP Verification failed. ${e.toString()}');
                                   }
